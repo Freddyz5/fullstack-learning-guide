@@ -1,0 +1,20 @@
+/* Starlight Custom CSS */
+.hero img {
+    /* Make the black background of the hero image transparent */
+    mix-blend-mode: screen;
+    /* Add rounded corners as requested */
+    border-radius: 200px;
+    /* Optional: add a subtle glow/shadow to complement the neon */
+    filter: drop-shadow(0 0 10px rgba(100, 100, 255, 0.2));
+}
+
+/* For light mode, mix-blend-mode screen makes the image almost invisible on white backgrounds.
+   Let's ensure it looks good on both modes, or use a different blend mode for light theme.
+   Starlight uses data-theme='light' on the document root. */
+:root[data-theme='light'] .hero img {
+    mix-blend-mode: multiply; /* white becomes transparent, black stays. BUT our image has black background! */
+    /* If the image has a black background, multiply on a white background will make the whole square black. */
+    /* So for light mode, it's better to just keep it normal or use a CSS filter to invert it: */
+    mix-blend-mode: screen;
+    filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 10px rgba(100, 100, 255, 0.2));
+}
