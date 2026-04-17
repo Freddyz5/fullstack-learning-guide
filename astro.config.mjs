@@ -5,6 +5,8 @@ import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://freddytacuri.github.io',
+	base: '/fullstack-learning-guide',
 	integrations: [
 		starlight({
 			title: 'Fullstack Learning Guide',
