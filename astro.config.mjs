@@ -14,12 +14,12 @@ export default defineConfig({
 					slug: 'guides/como-usar'
 				},
 				{
-					label: '🟦 Primer Periodo Académico',
-					autogenerate: { directory: 'periodo-1' },
+					label: '🟦 Bases y Lógica',
+					autogenerate: { directory: 'bases-y-logica' },
 				},
 				{
-					label: '🟩 Segundo Periodo Académico',
-					autogenerate: { directory: 'periodo-2' },
+					label: '🟩 Desarrollo y Despliegue',
+					autogenerate: { directory: 'desarrollo-y-despliegue' },
 				},
 			],
 			customCss: [
