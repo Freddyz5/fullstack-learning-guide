@@ -18,22 +18,24 @@ jobs:
       - name: 📥 Checkout
         uses: actions/checkout@v4
 
-      - name: 🟢 Setup Node
-        uses: actions/setup-node@v4
+      # 🟡 Instalar Bun
+      - name: 🟡 Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 22
-          cache: npm
+          bun-version: latest
 
+      # 📦 Instalar deps con Bun
       - name: 📦 Install dependencies
-        run: npm install
+        run: bun install
 
+      # 🏗️ Build
       - name: 🏗️ Build
-        run: npm run build
+        run: bun run build
 
       - name: 📦 Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Astro build output
+          path: ./dist
 
   deploy:
     needs: build
